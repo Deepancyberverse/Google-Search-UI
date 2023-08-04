@@ -15,14 +15,14 @@
         <div class="searchBox">
             <img src="Img/google-logo-9808.png" id="google-img">
             <input type="search" id="input" placeholder="Search google or type the URL">
-            <button onclick="calculate()">Calculate</button>
-            <img src="Img/mic.png" alt="" id="mic">
+            <button onclick="calculate()">
+                <img src="Img/mic.png" alt="calculate" id="mic">
+            </button>
         </div>
     </div>
     <script type="text/javascript">
         function calculate() {
             var input = document.getElementById('input').value;
-            // Perform your calculation here. For instance, let's add 10 to the input value
             var result = Number(input) + 10;
             alert("The result is: " + result);
         }

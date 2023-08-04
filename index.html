@@ -14,7 +14,7 @@
     <div class="hero">
         <div class="searchBox">
             <img src="Img/google-logo-9808.png" id="google-img">
-            <input type="search" id="input" placeholder="Search google or type the URL">
+            <input type="search" id="input" placeholder="Enter calculation or type the URL">
             <button onclick="calculate()">
                 <img src="Img/mic.png" alt="calculate" id="mic">
             </button>
@@ -23,12 +23,16 @@
     <script type="text/javascript">
         function calculate() {
             var input = document.getElementById('input').value;
-            var result = Number(input) + 10;
-            alert("The result is: " + result);
+            try {
+                var result = eval(input);
+                alert("The result is: " + result);
+            } catch (error) {
+                alert("Invalid input");
+            }
         }
         let input = document.getElementById('input');
         if(window.innerWidth < 430){
-        input.setAttribute('placeholder', 'Search')
+        input.setAttribute('placeholder', 'Enter calculation')
         }
         console.log(window.innerWidth)
 

@@ -18,18 +18,19 @@
             <button onclick="calculate()">
                 <img src="Img/mic.png" alt="calculate" id="mic">
             </button>
-            <p id="result"></p>
         </div>
     </div>
     <script type="text/javascript">
         function calculate() {
             var input = document.getElementById('input').value;
+            var speech = new SpeechSynthesisUtterance();
             try {
                 var result = eval(input);
-                document.getElementById('result').innerText = "The result is: " + result;
+                speech.text = "The result is: " + result;
             } catch (error) {
-                document.getElementById('result').innerText = "Invalid input";
+                speech.text = "Invalid input";
             }
+            window.speechSynthesis.speak(speech);
         }
         let input = document.getElementById('input');
         if(window.innerWidth < 430){

@@ -32,6 +32,10 @@
 #mic {
     width: 17px;
     cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
 }
 
 #input {
